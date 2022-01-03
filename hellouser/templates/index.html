@@ -1,0 +1,93 @@
+{% block content %}
+<style>
+    body {
+        background-color: #303250;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+      }
+      
+    label{
+        color: #65657b;
+        font-family: sans-serif;
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+
+      li{
+        visibility: hidden;
+      }
+
+      a{ 
+          text-align: center;
+          font-weight:bold;
+          text-decoration: none;
+      }
+
+      a:link{
+        color: white;
+      }
+
+      a:visited{
+        color: white;
+    }
+    a:hover{
+        color: #dc2f80;
+      }
+      textarea{
+        margin-top: 100px;
+        background-color: #303245;
+        height: 30px;
+        border-radius: 11px;
+        position: relative;
+        width: 100%;
+        color: #f7f0f0;
+      }
+
+      td{
+          height:50%;
+      }
+
+      form {
+        background-color: #15172b;
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: 500px;
+        padding: 20px;
+        width: 320px;
+      }
+      
+      input {
+        margin-top: 30px;
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 10%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+      }
+      input:hover{
+        color: #dc2f80;
+      }
+      
+</style>
+<a href="{% url 'all_users' %}">Усі користувачі</a>
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Привітатися" />
+</form>
+{% endblock %}

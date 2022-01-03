@@ -1,0 +1,49 @@
+{% block content %}
+
+<style>
+    body {
+        background-color: #303250;
+        max-width: 500px;
+        margin-left:45%;
+        margin-top: 15%;
+      }
+      
+    h2{
+        color: #bcbcf7;
+        font-family: sans-serif;
+        margin: 20px;
+        line-height: 14px;
+        top: 20px;
+      }
+
+
+
+      a{ 
+          text-align: center;
+          font-weight:bold;
+          text-decoration: none;
+          margin:25px;
+      }
+
+      a:link{
+        color: white;
+      }
+
+      a:visited{
+        color: white;
+    }
+    a:hover{
+        color: #dc2f80;
+      }
+
+
+ 
+      
+</style>
+
+<a href="{% url 'index' %}">Головна</a>
+
+{% for user in users %}
+<h2> {{ user.first_name }} {{ user.last_name}}</h2>
+{% endfor%}
+{% endblock %}

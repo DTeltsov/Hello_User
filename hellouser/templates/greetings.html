@@ -1,0 +1,57 @@
+{% block content %}
+<style>
+    body {
+        background-color: #303250;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+      }
+      
+    p{
+        color: #bcbcf7;
+        font-family: sans-serif;
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+
+
+
+      a{ 
+          text-align: center;
+          font-weight:bold;
+          text-decoration: none;
+          margin:25px;
+      }
+
+      a:link{
+        color: white;
+      }
+
+      a:visited{
+        color: white;
+    }
+    a.a1:hover{
+        color: #dc2f80;
+      }
+    a.a2:hover{
+        color:#3b2fdc;
+      }
+
+
+ 
+      
+</style>
+
+
+
+
+<a class ="a1" href="{% url 'all_users' %}">Усі користувачі</a>
+<p>{{greetings}}</p>
+<a class ="a2" href="{% url 'index' %}">Головна</a>
+
+{% endblock %}
